@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125">
+  <rect width="900" height="1125" fill="#17171550"/>
+  <rect x="0.5" y="0.5" width="899" height="1124" fill="none" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <line x1="0" y1="0" x2="900" y2="1125" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="0" y2="1125" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <text x="36" y="1068.75" font-family="Helvetica, Arial, sans-serif" font-size="16.2" letter-spacing="1" fill="rgba(244,243,239,0.55)">ASL LENS CONCEPT DESIGN — THUMBNAIL PLACEHOLDER</text>
+</svg>

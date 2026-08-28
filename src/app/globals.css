@@ -1,0 +1,243 @@
+/* ---------------------------------------------------------------
+   Design tokens
+   --------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+
+  --font-archivo: "Archivo Variable", "Archivo", "Helvetica Neue", Arial,
+    sans-serif;
+
+  /* canvas (the black portfolio surface) */
+  --background: #0a0a0a;
+  --foreground: #f4f3ef;
+  --muted: #94938d;
+  --muted-strong: #b8b7b0;
+  --border: rgba(244, 243, 239, 0.14);
+  --border-strong: rgba(244, 243, 239, 0.3);
+
+  /* the light gray area the canvas floats on at large viewports */
+  --page-bg: #e7e6e2;
+
+  /* tags / labels (white rectangle, black text) */
+  --tag-bg: #f4f3ef;
+  --tag-fg: #0a0a0a;
+
+  /* layout */
+  --canvas-max-width: 1512px;
+  --content-width: 1200px;
+  --page-padding: clamp(1.25rem, 1rem + 2.2vw, 3.5rem);
+  --gap: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+  --canvas-radius: 20px;
+
+  /* radii */
+  --radius-pill: 999px;
+  --radius-sm: 3px;
+
+  /* type scale */
+  --fs-micro: 0.6875rem;
+  --fs-small: 0.8125rem;
+  --fs-body: clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem);
+  --fs-lead: clamp(1.05rem, 0.95rem + 0.5vw, 1.375rem);
+  --fs-heading: clamp(1.85rem, 1.2rem + 2.6vw, 3.25rem);
+  --fs-display: clamp(2.25rem, 1.1rem + 4.8vw, 4.5rem);
+  --fs-project-title: clamp(2.5rem, 1.2rem + 5.6vw, 5.5rem);
+  --fs-giant: clamp(3.25rem, 0.5rem + 14vw, 12.5rem);
+
+  /* motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 220ms;
+  --duration-base: 320ms;
+}
+
+/* ---------------------------------------------------------------
+   Reset
+   --------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--foreground);
+  font-family: var(--font-archivo);
+  font-size: var(--fs-body);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* visible, accessible focus state everywhere */
+:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------
+   Canvas shell — the black surface sitting on the light page
+   --------------------------------------------------------------- */
+.siteCanvas {
+  max-width: var(--canvas-max-width);
+  margin: 0 auto;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+@media (min-width: 1600px) {
+  .siteCanvas {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--canvas-radius);
+  }
+}
+
+/* ---------------------------------------------------------------
+   Shared layout primitives
+   --------------------------------------------------------------- */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gap);
+}
+
+/* small, uppercase, tracked-out utility text — nav items, tags, labels */
+.eyebrow {
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3em 0.6em;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.pillButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 0.55em 1.1em;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  background: transparent;
+  transition: background-color var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease),
+    border-color var(--duration-fast) var(--ease);
+}
+
+@media (max-width: 420px) {
+  .pillButton {
+    padding: 0.5em 0.7em;
+  }
+}
+
+.pillButton:hover {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+}
+
+.sectionLabel {
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}

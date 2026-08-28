@@ -1,0 +1,21 @@
+.figure {
+  width: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #141412;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.caption {
+  margin-top: 0.75rem;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  max-width: 60ch;
+}

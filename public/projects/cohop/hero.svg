@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#17171550"/>
+  <rect x="0.5" y="0.5" width="1599" height="999" fill="none" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <line x1="0" y1="0" x2="1600" y2="1000" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <line x1="1600" y1="0" x2="0" y2="1000" stroke="rgba(244,243,239,0.16)" stroke-width="1"/>
+  <text x="64" y="950" font-family="Helvetica, Arial, sans-serif" font-size="28.799999999999997" letter-spacing="1" fill="rgba(244,243,239,0.55)">CO-HOP — HERO PLACEHOLDER</text>
+</svg>

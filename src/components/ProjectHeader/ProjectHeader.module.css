@@ -1,0 +1,36 @@
+.header {
+  padding-top: clamp(2.5rem, 1.8rem + 2vw, 3.5rem);
+}
+
+.metaRow {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: clamp(1rem, 0.8rem + 1vw, 1.75rem);
+}
+
+.title {
+  font-size: var(--fs-project-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  max-width: 18ch;
+}
+
+.description {
+  font-size: var(--fs-lead);
+  color: var(--muted-strong);
+  max-width: 46ch;
+  margin-bottom: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+}
+
+.heroWrap {
+  padding: 0 var(--page-padding);
+}
+
+@media (max-width: 720px) {
+  .heroWrap {
+    padding: 0;
+  }
+}

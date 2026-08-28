@@ -1,0 +1,30 @@
+.section {
+  padding-top: clamp(3rem, 2rem + 4vw, 6rem);
+  padding-bottom: clamp(3rem, 2rem + 4vw, 6rem);
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: clamp(2.5rem, 1.8rem + 3vw, 5rem);
+}
+
+.headingText {
+  grid-column: 3 / span 7;
+  font-size: var(--fs-heading);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.loadMoreRow {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+@media (max-width: 720px) {
+  .headingText {
+    grid-column: 1 / -1;
+  }
+}

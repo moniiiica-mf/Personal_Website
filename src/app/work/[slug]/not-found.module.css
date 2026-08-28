@@ -1,0 +1,18 @@
+.section {
+  padding-top: clamp(4rem, 3rem + 5vw, 8rem);
+  padding-bottom: clamp(4rem, 3rem + 5vw, 8rem);
+}
+
+.heading {
+  font-size: var(--fs-heading);
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.body {
+  font-size: var(--fs-body);
+  color: var(--muted-strong);
+  max-width: 46ch;
+  margin-bottom: 2.5rem;
+}
