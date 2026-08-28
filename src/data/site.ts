@@ -70,15 +70,11 @@ export const SITE = {
   contact: {
     heading:
       "Ready to work together? Let's talk about freelance projects, collaborations, and full-time roles.",
-    // TODO(Monica): replace with your real contact email — left as an
-    // obvious placeholder because it couldn't be confidently determined.
-    email: "your.email@example.com",
+    email: "monicafang.mmf@gmail.com",
   },
 
   footer: {
-    // TODO(Monica): replace with your real LinkedIn URL.
-    linkedinUrl: "https://www.linkedin.com/in/your-profile",
-    // TODO(Monica): replace with a real resume link (hosted PDF or /resume.pdf in /public).
-    resumeUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/monica-meng-fang-640279240/",
+    resumeUrl: "/resume.pdf",
   },
 };
